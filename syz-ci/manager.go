@@ -187,7 +187,7 @@ loop:
 			managerRestartTime = latestInfo.Time
 			mgr.restartManager()
 			if mgr.cmd != nil && mgr.managercfg.Cover && mgr.cfg.CoverUploadPath != "" {
-				coverUploadTime = time.Now().Add(6 * time.Hour)
+				coverUploadTime = time.Now().Add(30 * time.Minute)
 			}
 		}
 
