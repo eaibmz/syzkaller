@@ -84,6 +84,9 @@
         "cloudtasks": {
             "component": "cloudtasks"
         },
+        "commerce": {
+            "component": "commerce"
+        },
         "compute": {
             "component": "compute"
         },
@@ -92,6 +95,9 @@
         },
         "confidentialcomputing": {
             "component": "confidentialcomputing"
+        },
+        "config": {
+            "component": "config"
         },
         "contactcenterinsights": {
             "component": "contactcenterinsights"
@@ -225,6 +231,9 @@
         "monitoring": {
             "component": "monitoring"
         },
+        "netapp": {
+            "component": "netapp"
+        },
         "networkconnectivity": {
             "component": "networkconnectivity"
         },
@@ -254,6 +263,9 @@
         },
         "phishingprotection": {
             "component": "phishingprotection"
+        },
+        "policysimulator": {
+            "component": "policysimulator"
         },
         "policytroubleshooter": {
             "component": "policytroubleshooter"
@@ -294,6 +306,9 @@
         "secretmanager": {
             "component": "secretmanager"
         },
+        "securesourcemanager": {
+            "component": "securesourcemanager"
+        },
         "security": {
             "component": "security"
         },
@@ -314,6 +329,9 @@
         },
         "shell": {
             "component": "shell"
+        },
+        "shopping": {
+            "component": "shopping"
         },
         "speech": {
             "component": "speech"
