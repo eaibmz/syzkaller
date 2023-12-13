@@ -10,8 +10,8 @@ import (
 	"bytes"
 	"fmt"
 	"go/build"
-	"io/ioutil"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"runtime"
 	"runtime/debug"
@@ -22,8 +22,6 @@ import (
 
 	"golang.org/x/mod/modfile"
 	"golang.org/x/tools/internal/goroot"
-
-	exec "golang.org/x/sys/execabs"
 )
 
 // packageMainIsDevel reports whether the module containing package main
@@ -67,7 +65,7 @@ func hasTool(tool string) error {
 	switch tool {
 	case "patch":
 		// check that the patch tools supports the -o argument
-		temp, err := ioutil.TempFile("", "patch-test")
+		temp, err := os.CreateTemp("", "patch-test")
 		if err != nil {
 			return err
 		}
@@ -360,7 +358,7 @@ func WriteImportcfg(t testing.TB, dstPath string, additionalPackageFiles map[str
 	if err != nil {
 		t.Fatalf("preparing the importcfg failed: %s", err)
 	}
-	ioutil.WriteFile(dstPath, []byte(importcfg), 0655)
+	os.WriteFile(dstPath, []byte(importcfg), 0655)
 	if err != nil {
 		t.Fatalf("writing the importcfg failed: %s", err)
 	}
@@ -446,5 +444,34 @@ func NeedsLocalXTools(t testing.TB) {
 
 	if want := "golang.org/x/tools"; modulePath != want {
 		t.Skipf("skipping test: %s module path is %q, not %q", modFilePath, modulePath, want)
+	}
+}
+
+// NeedsGoExperiment skips t if the current process environment does not
+// have a GOEXPERIMENT flag set.
+func NeedsGoExperiment(t testing.TB, flag string) {
+	t.Helper()
+
+	goexp := os.Getenv("GOEXPERIMENT")
+	set := false
+	for _, f := range strings.Split(goexp, ",") {
+		if f == "" {
+			continue
+		}
+		if f == "none" {
+			// GOEXPERIMENT=none disables all experiment flags.
+			set = false
+			break
+		}
+		val := true
+		if strings.HasPrefix(f, "no") {
+			f, val = f[2:], false
+		}
+		if f == flag {
+			set = val
+		}
+	}
+	if !set {
+		t.Skipf("skipping test: flag %q is not set in GOEXPERIMENT=%q", flag, goexp)
 	}
 }
