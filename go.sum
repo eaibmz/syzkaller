@@ -123,8 +123,8 @@ cloud.google.com/go/baremetalsolution v0.5.0/go.mod h1:dXGxEkmR9BMwxhzBhV0AioD0U
 cloud.google.com/go/batch v0.3.0/go.mod h1:TR18ZoAekj1GuirsUsR1ZTKN3FC/4UDnScjT8NXImFE=
 cloud.google.com/go/batch v0.4.0/go.mod h1:WZkHnP43R/QCGQsZ+0JyG4i79ranE2u8xvjq/9+STPE=
 cloud.google.com/go/batch v0.7.0/go.mod h1:vLZN95s6teRUqRQ4s3RLDsH8PvboqBK+rn1oevL159g=
-cloud.google.com/go/batch v1.11.5 h1:TLfFZJXu+89CGbDK2mMql8f6HHFXarr8uUsaQ6wKatU=
-cloud.google.com/go/batch v1.11.5/go.mod h1:HUxnmZqnkG7zIZuF3NYCfUIrOMU3+SPArR5XA6NGu5s=
+cloud.google.com/go/batch v1.12.0 h1:lXuTaELvU0P0ARbTFxxdpOC/dFnZZeGglSw06BtO//8=
+cloud.google.com/go/batch v1.12.0/go.mod h1:CATSBh/JglNv+tEU/x21Z47zNatLQ/gpGnpyKOzbbcM=
 cloud.google.com/go/beyondcorp v0.2.0/go.mod h1:TB7Bd+EEtcw9PCPQhCJtJGjk/7TC6ckmnSFS+xwTfm4=
 cloud.google.com/go/beyondcorp v0.3.0/go.mod h1:E5U5lcrcXMsCuoDNyGrpyTm/hn7ne941Jz2vmksAxW8=
 cloud.google.com/go/beyondcorp v0.4.0/go.mod h1:3ApA0mbhHx6YImmuubf5pyW8srKnCEPON32/5hj+RmM=
